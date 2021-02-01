@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, Image, ScrollView } from 'react-native';
 
 export default function App() {
   const [isHungry, setHungry] = useState(true)
+  const [text, setText] = useState('')
   const title = isHungry ? "Feed Kitty" : "Let kitty nap"
+
+  const translate = (ev) => {
+    console.log(ev)
+  }
+
   return (
     <View style={styles.container}>
       <Text>Vivid</Text>
@@ -22,6 +28,15 @@ export default function App() {
           accessibilityLabel="It's pressable...how can you resist" />
       </ScrollView>
       <StatusBar style="auto" />
+
+      <TextInput
+        onChangeText={translate}
+        style={{ height: 40, border: '1px solid black', borderRadius: '3px' }}
+        placeholder="you cad"
+      />
+      <Text>
+        {text}
+      </Text>
     </View>
   );
 }
