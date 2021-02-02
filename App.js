@@ -1,44 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { ButtonGroup, ThemeProvider, Header } from 'react-native-elements';
+import horn from './horn.png'
+
+const buttons = ["Board Locator", "How to Register"]
+
+const theme = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}
 
 export default function App() {
-  const [isHungry, setHungry] = useState(true)
-  const [text, setText] = useState('')
-  const title = isHungry ? "Feed Kitty" : "Let kitty nap"
-
-  const translate = (words) => {
-    let newText = words.split(" ").map(w=> "🍕").join("")
-    setText(newText)
-  }
-
+  const [selectedIndex, setIndex] = useState(0)
   return (
-    <View style={styles.container}>
-      <Text>Vivid</Text>
-      <ScrollView>
-        <Image
-          source={{
-            uri: "https://robohash.org/plinko.png"
-          }}
-          style={{ width: 200, height: 200 }}
-        />
-        <Text>Cat Tinkerbell {isHungry ? "is" : "is not"} hungry.</Text>
-        <Button
-          onPress={() => setHungry(!isHungry)}
-          title={title}
-          accessibilityLabel="It's pressable...how can you resist" />
-      </ScrollView>
-      <StatusBar style="auto" />
-
-      <TextInput
-        onChangeText={translate}
-        style={{ height: 40}}
-        placeholder="you cad"
+    <ThemeProvider theme={theme}>
+      <Header
+        leftComponent={{ icon: 'menu', color: '#fff' }}
+        centerComponent={{ text: 'VOTE HERO', style: { color: '#fff' } }}
+        rightComponent={{ icon: 'home', color: '#fff' }}
       />
-      <Text>
-        {text}
-      </Text>
-    </View>
+      <ButtonGroup
+        onPress={(index) => setIndex(index)}
+        selectedIndex={selectedIndex}
+        buttons={buttons}
+        containerStyle={{ height: 100 }}
+      />
+    </ThemeProvider>
   );
 }
 
