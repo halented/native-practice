@@ -7,8 +7,9 @@ export default function App() {
   const [text, setText] = useState('')
   const title = isHungry ? "Feed Kitty" : "Let kitty nap"
 
-  const translate = (ev) => {
-    console.log(ev)
+  const translate = (words) => {
+    let newText = words.split(" ").map(w=> "🍕").join("")
+    setText(newText)
   }
 
   return (
@@ -31,7 +32,7 @@ export default function App() {
 
       <TextInput
         onChangeText={translate}
-        style={{ height: 40, border: '1px solid black', borderRadius: '3px' }}
+        style={{ height: 40}}
         placeholder="you cad"
       />
       <Text>
