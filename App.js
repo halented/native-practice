@@ -1,8 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { ButtonGroup, ThemeProvider, Header } from 'react-native-elements';
-import horn from './horn.png'
+import Icon from 'react-native-vector-icons/AntDesign';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+// valid icon names here: https://oblador.github.io/react-native-vector-icons/
 
 const buttons = ["Board Locator", "How to Register"]
 
@@ -15,19 +17,21 @@ const theme = {
 export default function App() {
   const [selectedIndex, setIndex] = useState(0)
   return (
-    <ThemeProvider theme={theme}>
-      <Header
-        leftComponent={{ icon: 'menu', color: '#fff' }}
-        centerComponent={{ text: 'VOTE HERO', style: { color: '#fff' } }}
-        rightComponent={{ icon: 'home', color: '#fff' }}
-      />
-      <ButtonGroup
-        onPress={(index) => setIndex(index)}
-        selectedIndex={selectedIndex}
-        buttons={buttons}
-        containerStyle={{ height: 100 }}
-      />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <Header
+          leftComponent={<Icon name='menufold' color='white' size={30}/> }
+          centerComponent={{ text: 'OHIO VOTE HERO', style: { color: '#fff' } }}
+          rightComponent={<Icon name='checkcircleo' color='white' size={30}/>}
+        />
+        <ButtonGroup
+          onPress={(index) => setIndex(index)}
+          selectedIndex={selectedIndex}
+          buttons={buttons}
+          containerStyle={{ height: 100 }}
+        />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 

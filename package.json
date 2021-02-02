@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.4.0",
-    "@babel/core": "~7.9.0"
+    "@babel/core": "~7.9.0",
+    "react-native-vector-icons": "^8.0.0"
   },
   "private": true
 }
