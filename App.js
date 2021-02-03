@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import InfoCard from './InfoCard'
 
 
-const buttons = ["Board Locator", "How to Register", "How to Vote"]
+const buttons = ["How to Register", "How to Vote", "Board Locator"]
 
 const theme = {
   display: 'flex',
@@ -49,3 +49,4 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
+// the middle pipes on about|faq|donate are blue will need to fix when those links are built out

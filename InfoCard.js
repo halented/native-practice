@@ -4,6 +4,7 @@ import { Text, StyleSheet} from 'react-native'
 import cards from './InfoCardComponents/import-consolidator'
 import HowToRegister from './InfoCardComponents/HowToRegister'
 import BoardLocator from './InfoCardComponents/BoardLocator'
+import HowToVote from './InfoCardComponents/HowToVote'
 
 const InfoCard = (props) => {
 
@@ -13,6 +14,8 @@ const InfoCard = (props) => {
                 return <HowToRegister />
             case "Board Locator":
                 return <BoardLocator />
+            case "How to Vote":
+                return <HowToVote />
             default:
                 return <Text>Make a Selection Above</Text>
         }
