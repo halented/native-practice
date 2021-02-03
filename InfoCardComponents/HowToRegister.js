@@ -5,6 +5,7 @@ import OhioIDCard from './SpecificVoters/OhioIDCard'
 import MilitaryVoter from './SpecificVoters/MilitaryVoter'
 import UnshelteredVoter from './SpecificVoters/UnshelteredVoter'
 import RegistrationInfoIncorrect from './SpecificVoters/RegistrationInfoIncorrect'
+import IncarceratedVoter from './SpecificVoters/IncarceratedVoter'
 
 function HowToRegister() {
     const [showSpecific, setShowSpecific] = useState(false)
@@ -35,7 +36,7 @@ function HowToRegister() {
                         {" "}Ohio's Registration Portal.
                     </Text>
                     {" "}Note that the online portal requires an{" "}
-                    <Text style={{ fontWeight: 'bold' }}>Ohio ID (be that a non-expired Ohio ID card or Driver's License), your full name, date of birth, residential address, and Social Security Number.</Text>
+                    <Text style={{ fontWeight: 'bold' }}>Ohio ID (be that a non-expired Ohio ID Card or Driver's License), your full name, date of birth, residential address, and Social Security Number.</Text>
                 </Text>
                 <Text>{" "}</Text>
                 <Card.Divider />
@@ -48,6 +49,7 @@ function HowToRegister() {
             </>
         )
     }
+
     const renderSpecificScenarioInstructions = () => {
         switch (scenario) {
             case "license":
@@ -57,7 +59,9 @@ function HowToRegister() {
             case "unsheltered":
                 return <UnshelteredVoter goBack={goBack} />
             case "registration":
-                return <RegistrationInfoIncorrect goBack={goBack}/>
+                return <RegistrationInfoIncorrect goBack={goBack} />
+            case "incarceration":
+                return <IncarceratedVoter goBack={goBack} />
             default:
                 return buttons()
         }
@@ -67,47 +71,49 @@ function HowToRegister() {
         setShowSpecific(false)
     }
 
+    const buttonBuilder = (type) => {
+        let title
+        switch (type) {
+            case "license":
+                title = "No Ohio ID/License"
+                break
+            case "military":
+                title = "Military/Veteran"
+                break
+            case "unsheltered":
+                title = "Unsheltered Citizens"
+                break
+            case "registration":
+                title = "Registration is Incorrect"
+                break
+            case "incarceration":
+                title = "Incarceration"
+                break
+            default:
+                title = "Unknown"
+        }
+        return (
+            <>
+                <Text>{" "}</Text>
+                <Button
+                    title={title}
+                    onPress={() => {
+                        setShowSpecific(true)
+                        setScenario(type)
+                    }} />
+            </>
+        )
+    }
+
     const buttons = () => {
+        const types = ["license", "military", "unsheltered", "registration", "incarceration"]
         return (
             <ScrollView>
-                <Text>{" "}</Text>
-                <Button
-                    title="No Ohio ID/License"
-                    onPress={() => {
-                        setShowSpecific(true)
-                        setScenario("license")
-                    }} />
-                <Text>{" "}</Text>
-                <Button
-                    title="Military/Veteran"
-                    onPress={() => {
-                        setShowSpecific(true)
-                        setScenario("military")
-                    }} />
-                <Text>{" "}</Text>
-                <Button
-                    title="Unsheltered Citizens"
-                    onPress={() => {
-                        setShowSpecific(true)
-                        setScenario("unsheltered")
-                    }} />
-                <Text>{" "}</Text>
-                <Button
-                    title="Registration is Incorrect"
-                    onPress={() => {
-                        setShowSpecific(true)
-                        setScenario("registration")
-                    }} />
-                <Text>{" "}</Text>
-                <Button
-                    title="Incarceration"
-                    onPress={() => {
-                        setShowSpecific(true)
-                        setScenario("registration")
-                    }} />
+                {types.map(type=>buttonBuilder(type))}
             </ScrollView>
         )
     }
+
     return (
         <ScrollView>
             {showSpecific ?
