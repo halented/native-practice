@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Card } from 'react-native-elements'
 import { Text, ScrollView, Linking, Button } from 'react-native'
-import OhioIDCard from './OhioIDCard'
-import MilitaryVoter from './MilitaryVoter'
-import UnshelteredVoter from './UnshelteredVoter'
+import OhioIDCard from './SpecificVoters/OhioIDCard'
+import MilitaryVoter from './SpecificVoters/MilitaryVoter'
+import UnshelteredVoter from './SpecificVoters/UnshelteredVoter'
 
 function HowToRegister() {
     const [showSpecific, setShowSpecific] = useState(false)
@@ -12,14 +12,18 @@ function HowToRegister() {
     const renderSpecificScenarioInstructions = () => {
         switch (scenario) {
             case "license":
-                return <OhioIDCard />
+                return <OhioIDCard goBack={goBack}/>
             case "military":
-                return <MilitaryVoter />
+                return <MilitaryVoter goBack={goBack}/>
             case "unsheltered":
-                return <UnshelteredVoter />
+                return <UnshelteredVoter goBack={goBack}/>
             default:
                 return buttons()
         }
+    }
+
+    const goBack = () => {
+        setShowSpecific(false)
     }
 
     const buttons = () => {

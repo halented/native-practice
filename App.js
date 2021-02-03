@@ -16,6 +16,14 @@ const theme = {
   alignItems: 'center',
   justifyContent: 'center'
 }
+const styles = StyleSheet.create({
+  bottomCard: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: 'rgb(32, 137, 220)'
+  },
+});
 
 export default function App() {
   const [selectedIndex, setIndex] = useState(0)
@@ -41,12 +49,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  bottomCard: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    color: 'rgb(32, 137, 220)'
-  },
-});
