@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { ButtonGroup, ThemeProvider, Header, Card } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/AntDesign';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import Icon from 'react-native-vector-icons/AntDesign';
+// valid icon names here: https://oblador.github.io/react-native-vector-icons/
 
 import InfoCard from './InfoCard'
 
-// valid icon names here: https://oblador.github.io/react-native-vector-icons/
 
 const buttons = ["Board Locator", "How to Register", "How to Vote"]
 
@@ -32,7 +33,7 @@ export default function App() {
           buttons={buttons}
           containerStyle={{ height: 100 }}
         />
-        <InfoCard selected={buttons[selectedIndex]}/>
+        <InfoCard selected={buttons[selectedIndex]} />
         <Card>
           <Text style={styles.bottomCard}>About | FAQ | Donate</Text>
         </Card>
