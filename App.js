@@ -8,7 +8,7 @@ import InfoCard from './InfoCard'
 
 // valid icon names here: https://oblador.github.io/react-native-vector-icons/
 
-const buttons = ["Board Locator", "How to Register"]
+const buttons = ["Board Locator", "How to Register", "How to Vote"]
 
 const theme = {
   display: 'flex',
