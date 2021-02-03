@@ -22,7 +22,7 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <Header
-          leftComponent={<Icon name='menufold' color='white' size={30} />}
+          leftComponent={<Icon name='star' color='white' size={30} />}
           centerComponent={{ text: 'OHIO VOTE HERO', style: { color: '#fff', fontSize: 30 } }}
           rightComponent={<Icon name='star' color='white' size={30} />}
         />

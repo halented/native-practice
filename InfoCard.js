@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card } from 'react-native-elements'
 import { Text, StyleSheet, ScrollView, Linking, Button } from 'react-native'
 
 const InfoCard = (props) => {
+
+    const [renderSpecificVoterInfo, setRenderSpecificVoterInfo] = useState(false)
+    const [voterScenario, setVoterScenario] = useState("")
+
+    const conditionalRender = () => {
+        switch (props.selected) {
+            case "How to Register":
+                return registrationInstructions()
+            case "Board Locator":
+                return boardLocator()
+            default:
+                return <Text>Make a Selection Above</Text>
+        }
+    }
+
+    const renderSpecificInfo = () => {
+        switch (voterScenario) {
+            case "license":
+                return licensingInfo()
+            case "Board Locator":
+                return boardLocator()
+            default:
+                return <Text>Make a Selection Above</Text>
+        }
+    }
 
     const registrationInstructions = () => {
         // we probably want a scroll view for this list, since it can contain mayb different things...links, pics, etc.
@@ -35,12 +60,17 @@ const InfoCard = (props) => {
                 </Text>
                 <Text style={{ textAlign: 'center' }}>
                     <ScrollView>
-                    <Text>{" "}</Text>
-                        <Button title="No Ohio ID/License"/>
                         <Text>{" "}</Text>
-                        <Button title="Military/Veteran"/>
+                        <Button
+                            title="No Ohio ID/License"
+                            onPress={() => {
+                                setRenderSpecificVoterInfo(true)
+                                setVoterScenario("license")
+                            }} />
                         <Text>{" "}</Text>
-                        <Button title="Unsheltered Citizens"/>
+                        <Button title="Military/Veteran" />
+                        <Text>{" "}</Text>
+                        <Button title="Unsheltered Citizens" />
                     </ScrollView>
                 </Text>
             </ScrollView>
@@ -53,11 +83,23 @@ const InfoCard = (props) => {
         )
     }
 
+    const licensingInfo = () => {
+        return (
+            <>
+                <Text>Licensing Info</Text>
+                <Text>{" "}</Text>
+                <Button title='Go Back' onPress={()=>setRenderSpecificVoterInfo(false)}/>
+            </>
+        )
+    }
+
     return (
         <Card containerStyle={styles.container}>
             {
-                props.selected === "How to Register" ?
-                    registrationInstructions() : boardLocator()
+                renderSpecificVoterInfo ?
+                    renderSpecificInfo()
+                    :
+                    conditionalRender()
             }
         </Card>
     )
