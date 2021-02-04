@@ -7,12 +7,14 @@ function MilitaryVoter(props) {
     return (
         <ScrollView>
             <Text style={styles.sectionHeader}>Military Voters</Text>
+            <Text>{" "}</Text>
+            <Card.Divider />
             <Text>If you are deployed in the military you may vote via absentee ballot. Absentee ballots are sent to military automatically starting September 18th.</Text>
             <Text>{" "}</Text>
             <Card.Divider />
             <Text>You must still register to vote. Follow the instructions on the main page for resources and instructions on registration. If your place of residence is in question or you would like clarification on what is a valid address to use, please refer to the
                 <Text
-                    style={{ color: "rgb(37, 137, 220)" }}
+                    style={styles.link}
                     onPress={() => Linking.openURL('https://www.ohiosos.gov/elections/voters/voter-eligibility-residency-reqs/')}>
                     {" "}Residency Requirements page
                 </Text>

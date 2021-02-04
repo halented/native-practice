@@ -7,6 +7,7 @@ function OhioIDCard(props) {
     return (
         <ScrollView>
             <Text style={styles.sectionHeader}>Obtaining ID</Text>
+            <Text>{" "}</Text>
             <Card.Divider />
             <Text>In order to apply for an Ohio ID Card or Driver's License, you must appear in-person at an Ohio licensing agency with proof of the following items:</Text>
             <Text>{" "}</Text>
@@ -21,7 +22,7 @@ function OhioIDCard(props) {
             <Text>{" "}</Text>
             <Card.Divider />
             <Text>You can learn more information by visiting
-                <Text style={{ color: 'rgb(32,137,220)' }} onPress={() => Linking.openURL('https://www.bmv.ohio.gov/dl-id-card.aspx#gsc.tab=0')}>
+                <Text style={styles.link} onPress={() => Linking.openURL('https://www.bmv.ohio.gov/dl-id-card.aspx#gsc.tab=0')}>
                     {" "}Ohio's BMV site.
                 </Text>
             </Text>

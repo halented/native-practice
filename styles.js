@@ -10,5 +10,6 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         backgroundColor: 'rgba(247,247,247,1.0)',
         textAlign: 'center'
-    }
+    },
+    link: { color: 'rgb(37,137,200)' }
 })
