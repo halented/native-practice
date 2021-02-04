@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Button, ScrollView } from 'react-native'
+import { Text, Button, ScrollView, Linking } from 'react-native'
 import { styles } from '../../styles'
 import { Card } from 'react-native-elements'
 
