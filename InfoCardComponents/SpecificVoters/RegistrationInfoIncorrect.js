@@ -17,11 +17,33 @@ function RegistrationInfoIncorrect(props) {
             <Text>{" "}</Text>
             <Card.Divider />
             <Text>
-                A provisional ballot may be cast at the polling place if your name changes during the 28 days before an election, but <Text style={{ fontWeight: 'bold' }}>provisional ballots should be avoided as much as possible, </Text> <Text style={styles.link} onPress={() => Linking.openURL('https://www.eac.gov/sites/default/files/document_library/files/EAVSDeepDive_provisionalballot.pdf')}>being the most likely ballot to be rejected/not counted.</Text> According to the Ohio Secretary of State, "If you are already registered to vote but have changed your name after the voter registration deadline, you may appear at your polling location on Election Day, provide proof of legal name change, complete SOS-prescribed form 10-L and cast a regular ballot."
+                A provisional ballot may be cast at the polling place if your name changes during the 28 days before an election, but <Text style={{ fontWeight: 'bold' }}>provisional ballots should be avoided as much as possible, </Text><Text style={styles.link} onPress={() => Linking.openURL('https://www.eac.gov/sites/default/files/document_library/files/EAVSDeepDive_provisionalballot.pdf')}>being the most likely ballot to be rejected/not counted.</Text> According to the Ohio Secretary of State, "If you are already registered to vote but have changed your name after the voter registration deadline, you may appear at your polling location on Election Day, provide proof of legal name change, complete SOS-prescribed form 10-L and cast a regular ballot." The 10-L form would be provided to you at the polling location on the day of the election in that case; you would not need to make prior arrangements for it nor print the form out. You may view a preview of the form from <Text style={styles.link} onPress={()=>Linking.openURL('https://www.ohiosos.gov/globalassets/elections/forms/10-l.pdf')}>HERE</Text>.
+            </Text>
+            <Text>{" "}</Text>
+            <Text>
+                <Text>Below is a summary of valid ID's in Ohio: </Text>
+                <Text>{"\n"}</Text>
+                <Text>{"\n"}</Text>
+                <Text>{" "}</Text>
+                <ScrollView>
+                    <Text>1. Government-issued photo ID with a valid expiration date, the voter's name, photo, and address</Text>
+                    <Text>2. Valid military ID cards</Text>
+                    <Text>3. Utility bill</Text>
+                    <Text>4. Bank statement</Text>
+                    <Text>5. Government check</Text>
+                    <Text>6. Paycheck</Text>
+                </ScrollView>
+                <Text>{"\n"}</Text>
+                <Text>{"\n"}</Text>
+                <Text>
+                    Note that IDs from out of state, social security cards, passports, birth cirtificates, insurance cards, or notices from the board of elections <Text style={{ fontWeight: 'bold' }}>are not valid proof of legal name.</Text>
+                </Text>
+                <Text>{" "}</Text>
+                For more detail on the above summarized forms of ID, please visit <Text style={styles.link} onPress={() => Linking.openURL('https://www.ohiosos.gov/elections/voters/id-requirements/')}>THIS SITE</Text>.
             </Text>
             <Text>{" "}</Text>
             <Card.Divider />
-            <Text>The SOS website contains information on submitting registration changes<Text style={styles.link} onPress={()=>Linking.openURL('https://www.ohiosos.gov/elections/voters/register/#obligations')}> here</Text>.</Text>
+            <Text>The SOS website contains information on submitting registration changes<Text style={styles.link} onPress={() => Linking.openURL('https://www.ohiosos.gov/elections/voters/register/#obligations')}> HERE</Text>.</Text>
             <Text>{" "}</Text>
             <Button title='Go Back' onPress={props.goBack} />
         </ScrollView>
