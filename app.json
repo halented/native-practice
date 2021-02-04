@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoRNativeProject",
-    "slug": "ExpoRNativeProject",
+    "name": "ohio-vote-hero-mobile",
+    "slug": "ohio-vote-hero-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

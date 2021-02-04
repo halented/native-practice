@@ -9,8 +9,8 @@ import IncarceratedVoter from './SpecificVoters/IncarceratedVoter'
 import { styles } from '../styles'
 
 function HowToRegister() {
-    const [showSpecific, setShowSpecific] = useState(true)
-    const [scenario, setScenario] = useState("registration")
+    const [showSpecific, setShowSpecific] = useState(false)
+    const [scenario, setScenario] = useState("")
 
     const renderBasicInstructions = () => {
         return (
