@@ -1,19 +1,7 @@
 import React from 'react'
 import { Card } from 'react-native-elements'
-import { Text, Button, ScrollView, Linking, StyleSheet } from 'react-native'
-
-const styles = StyleSheet.create({
-    sectionHeader: {
-        paddingTop: 2,
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingBottom: 2,
-        fontSize: 16,
-        fontWeight: 'bold',
-        backgroundColor: 'rgba(247,247,247,1.0)',
-        textAlign: 'center'
-    }
-})
+import { Text, Button, ScrollView, Linking } from 'react-native'
+import { styles } from '../../styles'
 
 function OhioIDCard(props) {
     return (
@@ -38,7 +26,7 @@ function OhioIDCard(props) {
                 </Text>
             </Text>
             <Text><Text style={{ fontStyle: 'italic' }}>Note that the board of elections does not account for time spent applying for an ID Card or Driver's License.</Text>
-            {" "}If you need to apply for one of these items before you register, do so as early as possible; at least two weeks prior to the registration deadline itself.</Text>
+                {" "}If you need to apply for one of these items before you register, do so as early as possible; at least two weeks prior to the registration deadline itself.</Text>
             <Text>{" "}</Text>
             <Button title='Go Back' onPress={props.goBack} />
         </ScrollView>

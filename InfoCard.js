@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { Card } from 'react-native-elements'
-import { Text, StyleSheet} from 'react-native'
-import cards from './InfoCardComponents/import-consolidator'
-import HowToRegister from './InfoCardComponents/HowToRegister'
-import BoardLocator from './InfoCardComponents/BoardLocator'
-import HowToVote from './InfoCardComponents/HowToVote'
+import { Text, StyleSheet } from 'react-native'
+import { HowToRegister, BoardLocator, HowToVote } from './InfoCardComponents/import-consolidator'
 
 const InfoCard = (props) => {
 

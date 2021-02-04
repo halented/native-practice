@@ -78,7 +78,7 @@ function HowToRegister() {
                 title = "No Ohio ID/License"
                 break
             case "military":
-                title = "Military/Veteran"
+                title = "Military/Overseas"
                 break
             case "unsheltered":
                 title = "Unsheltered Citizens"
@@ -96,6 +96,7 @@ function HowToRegister() {
             <>
                 <Text>{" "}</Text>
                 <Button
+                    key={type}
                     title={title}
                     onPress={() => {
                         setShowSpecific(true)
@@ -109,7 +110,7 @@ function HowToRegister() {
         const types = ["license", "military", "unsheltered", "registration", "incarceration"]
         return (
             <ScrollView>
-                {types.map(type=>buttonBuilder(type))}
+                {types.map(type => buttonBuilder(type))}
             </ScrollView>
         )
     }

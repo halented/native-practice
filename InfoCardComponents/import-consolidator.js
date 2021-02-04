@@ -3,7 +3,7 @@ import HowToRegister from './HowToRegister'
 import HowToVote from './HowToVote'
 import BoardLocator from './BoardLocator'
 
-export const cards = {
+export {
     HowToRegister,
     HowToVote,
     BoardLocator
