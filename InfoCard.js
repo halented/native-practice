@@ -8,11 +8,19 @@ const InfoCard = (props) => {
     const conditionalRender = () => {
         switch (props.selected) {
             case "How to Register":
-                return <HowToRegister />
+                return (
+                    <Card containerStyle={styles.container}>
+                        <HowToRegister />
+                    </Card>
+                )
             case "Board Locator":
                 return <BoardLocator />
             case "How to Vote":
-                return <HowToVote />
+                return (
+                    <Card containerStyle={styles.container}>
+                        <HowToVote />
+                    </Card>
+                )
             default:
                 return <Text>Make a Selection Above</Text>
         }
@@ -21,11 +29,7 @@ const InfoCard = (props) => {
 
 
     return (
-        <Card containerStyle={styles.container}>
-            {
-                conditionalRender()
-            }
-        </Card>
+        conditionalRender()
     )
 }
 

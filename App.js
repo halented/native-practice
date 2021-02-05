@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { ButtonGroup, ThemeProvider, Header, Card } from 'react-native-elements';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { MAPS_API_KEY } from '@env'
+
 
 import Icon from 'react-native-vector-icons/AntDesign';
 // valid icon names here: https://oblador.github.io/react-native-vector-icons/
@@ -26,6 +29,7 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+
   const [selectedIndex, setIndex] = useState(0)
   return (
     <SafeAreaProvider>
@@ -50,5 +54,3 @@ export default function App() {
   );
 }
 // the middle pipes on about|faq|donate are blue will need to fix when those links are built out
-
-//<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" type="text/javascript"></script>

@@ -11,5 +11,11 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgba(247,247,247,1.0)',
         textAlign: 'center'
     },
-    link: { color: 'rgb(37,137,200)' }
+    link: { color: 'rgb(37,137,200)' },
+    placesInput: {
+        flex: 1,
+        padding: 10,
+        height: 200,
+        backgroundColor: '#ecf0f1',
+    }
 })
