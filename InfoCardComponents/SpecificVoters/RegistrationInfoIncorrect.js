@@ -26,13 +26,15 @@ function RegistrationInfoIncorrect(props) {
                 <Text>{"\n"}</Text>
                 <Text>{" "}</Text>
                 <ScrollView>
-                    <Text>1. Government-issued photo ID with a valid expiration date, the voter's name, photo, and address</Text>
+                    <Text>1. Government-issued photo ID*</Text>
                     <Text>2. Valid military ID cards</Text>
                     <Text>3. Utility bill</Text>
                     <Text>4. Bank statement</Text>
                     <Text>5. Government check</Text>
                     <Text>6. Paycheck</Text>
                 </ScrollView>
+                <Text>{"\n"}</Text>
+                <Text style={{fontStyle: 'italic'}}>*If using a Government ID, it must have a valid expiration date, the voter's name, photo, and address.</Text>
                 <Text>{"\n"}</Text>
                 <Text>{"\n"}</Text>
                 <Text>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Card } from 'react-native-elements'
-import { Text, ScrollView, Linking, Button } from 'react-native'
+import { Text, ScrollView, Linking, Button, View } from 'react-native'
 import OhioIDCard from './SpecificVoters/OhioIDCard'
 import MilitaryVoter from './SpecificVoters/MilitaryVoter'
 import UnshelteredVoter from './SpecificVoters/UnshelteredVoter'
@@ -94,16 +94,15 @@ function HowToRegister() {
                 title = "Unknown"
         }
         return (
-            <>
+            <View key={type}>
                 <Text>{" "}</Text>
                 <Button
-                    key={type}
                     title={title}
                     onPress={() => {
                         setShowSpecific(true)
                         setScenario(type)
                     }} />
-            </>
+            </View>
         )
     }
 
