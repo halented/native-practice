@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Card } from 'react-native-elements'
 import { Text, StyleSheet } from 'react-native'
 import { HowToRegister, BoardLocator, HowToVote } from './InfoCardComponents/import-consolidator'
+import { styles } from './styles'
 
 const InfoCard = (props) => {
 
@@ -35,11 +36,3 @@ const InfoCard = (props) => {
 
 
 export default InfoCard
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
